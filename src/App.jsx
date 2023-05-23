@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-// import "./style.css";
 
 function App() {
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
@@ -46,6 +45,31 @@ function App() {
         setPlayer((prevPlayer) => (prevPlayer === "X" ? "O" : "X"));
       }
     }
+
+      }
+    }
+    if (board.every((value) => value !== "")) {
+      return "draw";
+    }
+    return null;
+  };
+
+  const changeValue = (idx) => {
+    if (board[idx] === "" && !winner) {
+      setBoard((prevBoard) => {
+        const newBoard = [...prevBoard];
+        newBoard[idx] = player;
+        return newBoard;
+      });
+
+      const gameWinner = checkWinner();
+      if (gameWinner) {
+        setWinner(gameWinner);
+      } else {
+        setPlayer((prevPlayer) => (prevPlayer === "X" ? "O" : "X"));
+      }
+    }
+
   };
 
   const resetBoard = () => {
