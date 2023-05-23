@@ -2,8 +2,6 @@
 
 
 #this is just wow
-=======
-=======
 hello A good project
 
 A project assignment collaboration
