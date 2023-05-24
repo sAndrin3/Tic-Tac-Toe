@@ -18,7 +18,13 @@
   width: 500px;
 }
 .Grid--item {
-  
+  background-color: #00BFAE;
+ 
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
 }
 
 .Result button:hover {
