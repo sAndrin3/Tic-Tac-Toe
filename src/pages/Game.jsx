@@ -2,7 +2,7 @@ import React from 'react'
 import './game.css'
 import { useState } from "react";
 
-function Game() {
+function Game(){
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
@@ -79,7 +79,7 @@ function Game() {
         </div>
       </div>
       
-        
+       
     </div>
   )
 }
