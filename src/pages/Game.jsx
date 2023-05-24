@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function Game() {
    // State variables
+
   const [board, setBoard] = useState(["", "", "", "", "", "", "", "", ""]);
   const [player, setPlayer] = useState("X");
   const [winner, setWinner] = useState(null);
@@ -89,7 +90,7 @@ function Game() {
         </div>
       </div>
       
-        
+       
     </div>
   )
 }
