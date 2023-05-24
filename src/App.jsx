@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+
 // import "./style.css";
 
 function App() {
@@ -54,29 +56,15 @@ function App() {
     setWinner(null);
   };
 
+
   return (
-    <div>
-      <h1 classname="heading"> Tic-tac-Toe</h1>
-      <div className="Wrapper">
-        <div className="Grid--board">
-          {board.map((value, index) => (
-            <span
-              key={index}
-              className="Grid--item"
-              onClick={() => changeValue(index)}
-            >
-              {value}
-            </span>
-          ))}
-        </div>
-        {winner && (
-          <div className="Result">
-            {winner === "draw" ? <p>It's a draw!</p> : <p>Winner: {winner}</p>}
-            <button onClick={resetBoard}>Restart</button>
-          </div>
-        )}
-      </div>
-    </div>
+    <BrowserRouter>
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Game />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
